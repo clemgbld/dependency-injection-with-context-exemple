@@ -1,9 +1,8 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { Todo } from "../todos/todo";
-import { TodosServiceContext } from "./TodosServiceProvider";
+import { todosService } from "../todos/todos-service";
 
 const Todos = () => {
-  const todosService = useContext(TodosServiceContext);
   const [todos, setTodos] = useState<Todo[]>([]);
   useEffect(() => {
     const getTodos = async () => {
