@@ -9,8 +9,9 @@ describe("Todos", () => {
     vi.restoreAllMocks();
   });
   it("should retrieve a list of todos and display their titles", async () => {
-    render(<Todos />);
     vi.spyOn(todosService, "get").mockResolvedValue(todos);
+
+    render(<Todos />);
 
     await waitFor(() => {
       expect(screen.getByText("delectus aut autem")).toBeInTheDocument();
